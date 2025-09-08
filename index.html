@@ -161,85 +161,172 @@
       .phone-bar { font-size: 18px; padding: 10px; }
     }
 
-    /* --- Hamburger Menu Styles --- */
-    /* 1. Style the container for the hamburger icon */
-    .menu-toggle {
-      display: none; /* Hide by default on large screens */
-      flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 30px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 1010; /* On top of phone bar */
-      position: fixed;
-      top: 10px;
-      left: 15px;
+    /* --- Nieuwe/Nagestreepte Navigatiestijlen --- */
+
+    /* 1. Standaard Desktop Navigatiebalk */
+    .desktop-nav {
+        background-color: var(--primary); /* Dezelfde achtergrondkleur als de header */
+        padding: 10px 0; /* Klein beetje padding boven en onder */
+        text-align: center; /* Links horizontaal centreren */
+        /* Verberg op mobiel, toon op desktop */
+        display: none;
+    }
+    .desktop-nav ul {
+        list-style: none; /* Geen bolletjes */
+        margin: 0; /* Geen standaard marges */
+        padding: 0; /* Geen standaard padding */
+        display: flex; /* Links horizontaal weergeven */
+        justify-content: center; /* Links horizontaal centreren binnen de balk */
+        flex-wrap: wrap; /* Laat links naar de volgende regel gaan als ze niet passen */
+    }
+    .desktop-nav li {
+        margin: 5px 10px; /* Kleine marge rond elke link voor ademruimte */
+    }
+    .desktop-nav a {
+        color: var(--light); /* Witte tekst */
+        text-decoration: none; /* Geen onderstreping */
+        font-size: 16px; /* Leesbare tekstgrootte */
+        padding: 8px 12px; /* Padding rond de link voor een groter klikgebied */
+        border-radius: 4px; /* Kleine afronding voor de links */
+        transition: background-color 0.2s ease; /* Vloeiende hover overgang */
+    }
+    .desktop-nav a:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Licht doorschijnende witte achtergrond bij hover */
     }
 
-    /* 2. Style the hamburger lines */
-    .menu-toggle span {
+    /* 2. Hamburger Menu Container */
+    .hamburger-icon {
+      display: none; /* Standaard verborgen op grote schermen */
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px; /* 3 bars * 3px height + 2 * 4px margins */
+      cursor: pointer;
+      position: fixed; /* Blijft op zijn plaats bij scrollen */
+      top: 15px; /* Afstand vanaf de bovenkant */
+      left: 15px; /* Afstand vanaf de linkerkant */
+      z-index: 1001; /* Bovenop andere elementen */
+    }
+
+    /* 3. Stijl voor de hamburger strepen (nu zwart) */
+    .hamburger-icon span {
+      display: block;
       width: 100%;
       height: 3px;
-      background-color: var(--light); /* Use light color from vars */
-      transition: all 0.3s ease;
+      background-color: #000000; /* Zwarte kleur voor de strepen */
       border-radius: 2px;
+      transition: all 0.3s ease-in-out;
     }
 
-    /* 3. Style the mobile navigation menu */
-    #mobile-menu {
-      display: none; /* Hidden by default */
+    /* 4. De overlay (achtergrond) voor het mobiele menu */
+    .overlay {
+      height: 100%;
+      width: 0; /* Initieel verborgen */
       position: fixed;
-      top: 0;
+      z-index: 1000; /* Onder de hamburger maar boven de rest */
       left: 0;
-      height: 100vh;
+      top: 0;
+      background-color: rgba(0,0,0, 0.9); /* Zwarte achtergrond met transparantie */
+      overflow-x: hidden; /* Geen horizontale scroll */
+      transition: 0.5s; /* Soepele overgang */
+    }
+
+    /* 5. Inhoud van de overlay */
+    .overlay-content {
+      position: relative;
+      top: 25%; /* 25% vanaf de bovenkant */
       width: 100%;
-      background-color: var(--primary); /* Use primary color */
-      z-index: 1000; /* Below the toggle button */
-      padding-top: 60px; /* Space for the button */
-      overflow-y: auto; /* Allow scrolling if menu is long */
+      text-align: center;
+      margin-top: 30px;
     }
 
-    #mobile-menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    #mobile-menu ul li a {
-      display: block;
-      padding: 15px 20px;
-      color: var(--light);
+    /* 6. Links binnen de overlay */
+    .overlay a {
+      padding: 12px;
       text-decoration: none;
-      font-size: 18px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 24px;
+      color: #818181; /* Grijsachtige kleur */
+      display: block;
+      transition: 0.3s;
     }
 
-    #mobile-menu ul li a:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+    /* 7. Hover effect voor links in de overlay */
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1; /* Lichtere kleur bij hover/focus */
     }
 
-    /* 4. Show the hamburger and menu only on small screens */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex; /* Show hamburger icon */
+    /* 8. Sluitknop (X) binnen de overlay */
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+    }
+
+    /* 9. Media Query voor mobiele schermen */
+    @media screen and (max-width: 768px) {
+      /* Toon het hamburger icoon op kleine schermen */
+      .hamburger-icon {
+        display: flex;
+      }
+
+      /* Pas de grootte van de links in de overlay aan voor kleine schermen */
+      .overlay a {font-size: 20px}
+      .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+      }
+
+      /* Verberg de desktop navigatie op mobiel */
+      .desktop-nav {
+          display: none !important; /* Zorg dat het echt verborgen is */
       }
     }
+
+    /* 10. Media Query voor desktop schermen */
+    @media screen and (min-width: 769px) {
+        /* Toon de desktop navigatie op grote schermen */
+        .desktop-nav {
+            display: block; /* Maak het zichtbaar als een blok */
+        }
+        /* Verberg het hamburger icoon op grote schermen */
+        .hamburger-icon {
+             display: none !important; /* Zorg dat het echt verborgen is */
+        }
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- 1. The Hamburger Icon -->
-  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+  <!-- 1. Hamburger Icoon (alleen zichtbaar op mobiel) -->
+  <div class="hamburger-icon" onclick="openNav()" aria-label="Open navigatiemenu">
     <span></span>
     <span></span>
     <span></span>
-  </button>
+  </div>
 
-  <!-- 2. The Mobile Navigation Menu -->
-  <nav id="mobile-menu">
+  <!-- 2. Overlay voor het mobiele menu -->
+  <div id="myNav" class="overlay">
+    <!-- Sluitknop -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Sluit navigatiemenu">&times;</a>
+    <!-- Menu inhoud -->
+    <div class="overlay-content">
+      <a href="/">Home</a>
+      <a href="/slotenmaker-amsterdam-centrum.html">Amsterdam-Centrum</a>
+      <a href="/slotenmaker-amsterdam-noord.html">Amsterdam-Noord</a>
+      <a href="/slotenmaker-amsterdam-oost.html">Amsterdam-Oost</a>
+      <a href="/slotenmaker-amsterdam-west.html">Amsterdam-West</a>
+      <a href="/slotenmaker-amsterdam-zuid.html">Amsterdam-Zuid</a>
+      <a href="/slotenmaker-amsterdam-nieuw-west.html">Amsterdam-Nieuw-West</a>
+      <a href="/slotenmaker-amsterdam-zuid-oost.html">Amsterdam-Zuidoost</a>
+      <a href="/slotenmaker-amsterdam-westpoort.html">Amsterdam-Westpoort</a>
+    </div>
+  </div>
+
+  <!-- 3. Standaard Desktop Navigatie (alleen zichtbaar op desktop) -->
+  <nav class="desktop-nav">
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/slotenmaker-amsterdam-centrum.html">Amsterdam-Centrum</a></li>
@@ -253,7 +340,7 @@
     </ul>
   </nav>
 
-  <!-- Rest of your existing page content -->
+
   <!-- H1 bovenaan -->
   <h1 style="text-align: center; margin: 20px 0; font-size: 28px;">Spoed Slotenmaker Amsterdam – Binnen 30 Minuten</h1>
 
@@ -314,29 +401,19 @@
       <p>© 2025 Spoed Slotenmaker Amsterdam. Alle rechten voorbehouden.</p>
       <p>Deze website gebruikt Google Analytics 4 en CookieYes voor cookiebeheer. Geen persoonsgegevens worden verzameld.</p>
     </footer>
+  </div>
 
-  <!-- 3. JavaScript for Hamburger Menu Functionality -->
+  <!-- JavaScript voor het Hamburger Menu -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobile-menu');
+    // Functie om de overlay te openen
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
 
-        menuToggle.addEventListener('click', () => {
-            // Toggle the 'display' style of the menu
-            if (mobileMenu.style.display === 'block') {
-                mobileMenu.style.display = 'none';
-            } else {
-                mobileMenu.style.display = 'block';
-            }
-        });
-
-        // Optional: Close menu if user clicks outside of it
-        document.addEventListener('click', (event) => {
-            if (mobileMenu.style.display === 'block' && !mobileMenu.contains(event.target) && event.target !== menuToggle) {
-                mobileMenu.style.display = 'none';
-            }
-        });
-    });
+    // Functie om de overlay te sluiten
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
   </script>
 
 </body>
