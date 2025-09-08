@@ -124,9 +124,101 @@
       .hero h2 { font-size: 24px; }
       .btn { font-size: 16px; padding: 12px 24px; }
     }
+
+    /* --- Hamburger Menu Styles --- */
+    .hamburger-icon {
+      display: none; /* Hidden by default */
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      cursor: pointer;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1001; /* Higher than navbar */
+    }
+
+    .hamburger-icon span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: var(--light);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* The sidebar navigation */
+    .sidebar {
+      height: 100%;
+      width: 0; /* Initially hidden */
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: var(--primary);
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      padding: 12px 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: var(--light);
+      display: block;
+      transition: 0.3s;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+      color: var(--light);
+    }
+
+    /* Show hamburger and sidebar on small screens */
+    @media screen and (max-width: 768px) {
+      .hamburger-icon {
+        display: flex;
+      }
+      /* Push content down slightly to avoid overlap with fixed phone bar */
+      .header {
+          margin-top: 40px; /* Approx height of phone bar + icon space */
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger-icon" onclick="toggleNav()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- The Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+    <a href="/">Home</a>
+    <a href="/slotenmaker-amsterdam-centrum.html">Amsterdam-Centrum</a>
+    <a href="/slotenmaker-amsterdam-noord.html">Amsterdam-Noord</a>
+    <a href="/slotenmaker-amsterdam-oost.html">Amsterdam-Oost</a>
+    <a href="/slotenmaker-amsterdam-west.html">Amsterdam-West</a>
+    <a href="/slotenmaker-amsterdam-zuid.html">Amsterdam-Zuid</a>
+    <a href="/slotenmaker-amsterdam-nieuw-west.html">Amsterdam-Nieuw-West</a>
+    <a href="/slotenmaker-amsterdam-zuid-oost.html">Amsterdam-Zuidoost</a>
+    <a href="/slotenmaker-amsterdam-westpoort.html">Amsterdam-Westpoort</a>
+  </div>
 
   <!-- H1 bovenaan -->
   <h1 style="text-align: center; margin: 20px 0; font-size: 28px;">Spoed Slotenmaker Amsterdam – Binnen 30 Minuten</h1>
@@ -189,6 +281,22 @@
       <p>Deze website gebruikt Google Analytics 4 en CookieYes voor cookiebeheer. Geen persoonsgegevens worden verzameld.</p>
     </footer>
   </div>
+
+  <script>
+    // Function to open/close the sidebar
+    function toggleNav() {
+      const sidebar = document.getElementById("mySidebar");
+      if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+      } else {
+        sidebar.style.width = "250px";
+      }
+    }
+
+    // Optional: Close sidebar if user clicks outside of it (on the backdrop)
+    // This requires a bit more complex logic involving an overlay element or checking the click target.
+    // For simplicity, the close button and hamburger icon handle opening/closing.
+  </script>
 
 </body>
 </html>
