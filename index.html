@@ -162,119 +162,98 @@
     }
 
     /* --- Hamburger Menu Styles --- */
-    /* Style the hamburger icon container */
-    .hamburger-icon {
-      display: none; /* Hidden by default on large screens */
+    /* 1. Style the container for the hamburger icon */
+    .menu-toggle {
+      display: none; /* Hide by default on large screens */
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-around;
       width: 30px;
-      height: 21px; /* 3 bars * 3px height + 2 * 4px margins */
+      height: 30px;
+      background: transparent;
+      border: none;
       cursor: pointer;
+      padding: 0;
+      z-index: 1010; /* On top of phone bar */
       position: fixed;
-      top: 15px;
+      top: 10px;
       left: 15px;
-      z-index: 1001; /* Higher than navbar and phone bar */
     }
 
-    /* Style the hamburger bars */
-    .hamburger-icon span {
-      display: block;
+    /* 2. Style the hamburger lines */
+    .menu-toggle span {
+      width: 100%;
       height: 3px;
-      width: 100%;
-      background-color: var(--light); /* White bars */
+      background-color: var(--light); /* Use light color from vars */
+      transition: all 0.3s ease;
       border-radius: 2px;
-      transition: all 0.3s ease-in-out; /* Smooth transition for animation */
     }
 
-    /* The overlay background */
-    .overlay {
-      height: 100%;
-      width: 0; /* Initially hidden */
+    /* 3. Style the mobile navigation menu */
+    #mobile-menu {
+      display: none; /* Hidden by default */
       position: fixed;
-      z-index: 1000; /* Sit on top */
-      left: 0;
       top: 0;
-      background-color: rgba(0,0,0, 0.9); /* Black with opacity */
-      overflow-x: hidden; /* Disable horizontal scroll */
-      transition: 0.5s; /* Smooth transition */
-    }
-
-    /* Position the content inside the overlay */
-    .overlay-content {
-      position: relative;
-      top: 25%; /* 25% from the top */
+      left: 0;
+      height: 100vh;
       width: 100%;
-      text-align: center;
-      margin-top: 30px;
+      background-color: var(--primary); /* Use primary color */
+      z-index: 1000; /* Below the toggle button */
+      padding-top: 60px; /* Space for the button */
+      overflow-y: auto; /* Allow scrolling if menu is long */
     }
 
-    /* The navigation links inside the overlay */
-    .overlay a {
-      padding: 12px;
-      text-decoration: none;
-      font-size: 24px;
-      color: #818181;
+    #mobile-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #mobile-menu ul li a {
       display: block;
-      transition: 0.3s;
+      padding: 15px 20px;
+      color: var(--light);
+      text-decoration: none;
+      font-size: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* When you mouse over the navigation links, change their color */
-    .overlay a:hover, .overlay a:focus {
-      color: #f1f1f1;
+    #mobile-menu ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
-    /* Position the close button (top right corner) */
-    .overlay .closebtn {
-      position: absolute;
-      top: 20px;
-      right: 45px;
-      font-size: 60px;
-    }
-
-    /* When the screen is less than or equal to 600px wide, change the style of the overlay */
-    @media screen and (max-width: 600px) {
-      .hamburger-icon {
-        display: flex; /* Show hamburger icon on small screens */
-      }
-      .overlay a {font-size: 20px}
-      .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
+    /* 4. Show the hamburger and menu only on small screens */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex; /* Show hamburger icon */
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hamburger Icon -->
-  <div class="hamburger-icon" onclick="openNav()">
+  <!-- 1. The Hamburger Icon -->
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
     <span></span>
     <span></span>
     <span></span>
-  </div>
+  </button>
 
-  <!-- The Overlay (background) -->
-  <div id="myNav" class="overlay">
+  <!-- 2. The Mobile Navigation Menu -->
+  <nav id="mobile-menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/slotenmaker-amsterdam-centrum.html">Amsterdam-Centrum</a></li>
+      <li><a href="/slotenmaker-amsterdam-noord.html">Amsterdam-Noord</a></li>
+      <li><a href="/slotenmaker-amsterdam-oost.html">Amsterdam-Oost</a></li>
+      <li><a href="/slotenmaker-amsterdam-west.html">Amsterdam-West</a></li>
+      <li><a href="/slotenmaker-amsterdam-zuid.html">Amsterdam-Zuid</a></li>
+      <li><a href="/slotenmaker-amsterdam-nieuw-west.html">Amsterdam-Nieuw-West</a></li>
+      <li><a href="/slotenmaker-amsterdam-zuid-oost.html">Amsterdam-Zuidoost</a></li>
+      <li><a href="/slotenmaker-amsterdam-westpoort.html">Amsterdam-Westpoort</a></li>
+    </ul>
+  </nav>
 
-    <!-- Button to close the overlay navigation -->
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-    <!-- Overlay content -->
-    <div class="overlay-content">
-      <a href="/">Home</a>
-      <a href="/slotenmaker-amsterdam-centrum.html">Amsterdam-Centrum</a>
-      <a href="/slotenmaker-amsterdam-noord.html">Amsterdam-Noord</a>
-      <a href="/slotenmaker-amsterdam-oost.html">Amsterdam-Oost</a>
-      <a href="/slotenmaker-amsterdam-west.html">Amsterdam-West</a>
-      <a href="/slotenmaker-amsterdam-zuid.html">Amsterdam-Zuid</a>
-      <a href="/slotenmaker-amsterdam-nieuw-west.html">Amsterdam-Nieuw-West</a>
-      <a href="/slotenmaker-amsterdam-zuid-oost.html">Amsterdam-Zuidoost</a>
-      <a href="/slotenmaker-amsterdam-westpoort.html">Amsterdam-Westpoort</a>
-    </div>
-
-  </div>
-
+  <!-- Rest of your existing page content -->
   <!-- H1 bovenaan -->
   <h1 style="text-align: center; margin: 20px 0; font-size: 28px;">Spoed Slotenmaker Amsterdam – Binnen 30 Minuten</h1>
 
@@ -336,17 +315,29 @@
       <p>Deze website gebruikt Google Analytics 4 en CookieYes voor cookiebeheer. Geen persoonsgegevens worden verzameld.</p>
     </footer>
 
-    <script>
-        // Function to open the overlay navigation
-        function openNav() {
-            document.getElementById("myNav").style.width = "100%";
-        }
+  <!-- 3. JavaScript for Hamburger Menu Functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        // Function to close the overlay navigation
-        function closeNav() {
-            document.getElementById("myNav").style.width = "0%";
-        }
-    </script>
+        menuToggle.addEventListener('click', () => {
+            // Toggle the 'display' style of the menu
+            if (mobileMenu.style.display === 'block') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'block';
+            }
+        });
+
+        // Optional: Close menu if user clicks outside of it
+        document.addEventListener('click', (event) => {
+            if (mobileMenu.style.display === 'block' && !mobileMenu.contains(event.target) && event.target !== menuToggle) {
+                mobileMenu.style.display = 'none';
+            }
+        });
+    });
+  </script>
 
 </body>
 </html>
