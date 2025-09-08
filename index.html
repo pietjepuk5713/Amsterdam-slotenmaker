@@ -6,10 +6,10 @@
   <title>Spoed Slotenmaker Amsterdam – Binnen 30 Min | 24/7 | €99,95</title>
   <meta name="description" content="Op slot in Amsterdam? Dé spoed slotenmaker. Binnen 30 minuten ter plaatse, 24/7. Duidelijke vaste prijs: vanaf €99,95 overdag, €175 na. Bel direct!" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  
+
   <!-- CookieYes badge -->
   <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/1234567890abcedf12345678/cookieyes.js"></script>
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBMVZLF0KR"></script>
   <script>
@@ -82,6 +82,12 @@
       font-weight: bold;
       display: inline-block;
       margin: 20px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     }
     .container {
       max-width: 900px;
@@ -120,79 +126,121 @@
       color: #666;
       font-style: italic;
     }
+    .faq-section {
+        margin-top: 20px;
+    }
+    .faq-section summary {
+        cursor: pointer;
+        padding: 10px;
+        background-color: #e9e9e9;
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
+        list-style: none; /* Removes default arrow in some browsers */
+    }
+    .faq-section summary::-webkit-details-marker {
+        display: none; /* Hides default arrow in Chrome/Safari */
+    }
+    .faq-section summary::before {
+        content: "► "; /* Adds custom arrow */
+    }
+    .faq-section details[open] summary::before {
+        content: "▼ "; /* Changes arrow when open */
+    }
+    .faq-section details {
+        margin-bottom: 10px;
+        border: 1px solid #eee;
+    }
+    .faq-section details p {
+        padding: 10px;
+        background-color: #f9f9f9;
+        margin: 0;
+    }
     @media (max-width: 600px) {
       .hero h2 { font-size: 24px; }
       .btn { font-size: 16px; padding: 12px 24px; }
+      .phone-bar { font-size: 18px; padding: 10px; }
     }
 
     /* --- Hamburger Menu Styles --- */
+    /* Style the hamburger icon container */
     .hamburger-icon {
-      display: none; /* Hidden by default */
+      display: none; /* Hidden by default on large screens */
       flex-direction: column;
       justify-content: space-between;
       width: 30px;
-      height: 21px;
+      height: 21px; /* 3 bars * 3px height + 2 * 4px margins */
       cursor: pointer;
       position: fixed;
       top: 15px;
       left: 15px;
-      z-index: 1001; /* Higher than navbar */
+      z-index: 1001; /* Higher than navbar and phone bar */
     }
 
+    /* Style the hamburger bars */
     .hamburger-icon span {
       display: block;
       height: 3px;
       width: 100%;
-      background-color: var(--light);
+      background-color: var(--light); /* White bars */
       border-radius: 2px;
-      transition: all 0.3s ease;
+      transition: all 0.3s ease-in-out; /* Smooth transition for animation */
     }
 
-    /* The sidebar navigation */
-    .sidebar {
+    /* The overlay background */
+    .overlay {
       height: 100%;
       width: 0; /* Initially hidden */
       position: fixed;
-      z-index: 1000;
-      top: 0;
+      z-index: 1000; /* Sit on top */
       left: 0;
-      background-color: var(--primary);
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
+      top: 0;
+      background-color: rgba(0,0,0, 0.9); /* Black with opacity */
+      overflow-x: hidden; /* Disable horizontal scroll */
+      transition: 0.5s; /* Smooth transition */
     }
 
-    .sidebar a {
-      padding: 12px 15px;
+    /* Position the content inside the overlay */
+    .overlay-content {
+      position: relative;
+      top: 25%; /* 25% from the top */
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    /* The navigation links inside the overlay */
+    .overlay a {
+      padding: 12px;
       text-decoration: none;
-      font-size: 18px;
-      color: var(--light);
+      font-size: 24px;
+      color: #818181;
       display: block;
       transition: 0.3s;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .sidebar a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+    /* When you mouse over the navigation links, change their color */
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
     }
 
-    .sidebar .closebtn {
+    /* Position the close button (top right corner) */
+    .overlay .closebtn {
       position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-      color: var(--light);
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
     }
 
-    /* Show hamburger and sidebar on small screens */
-    @media screen and (max-width: 768px) {
+    /* When the screen is less than or equal to 600px wide, change the style of the overlay */
+    @media screen and (max-width: 600px) {
       .hamburger-icon {
-        display: flex;
+        display: flex; /* Show hamburger icon on small screens */
       }
-      /* Push content down slightly to avoid overlap with fixed phone bar */
-      .header {
-          margin-top: 40px; /* Approx height of phone bar + icon space */
+      .overlay a {font-size: 20px}
+      .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
       }
     }
   </style>
@@ -200,24 +248,31 @@
 <body>
 
   <!-- Hamburger Icon -->
-  <div class="hamburger-icon" onclick="toggleNav()">
+  <div class="hamburger-icon" onclick="openNav()">
     <span></span>
     <span></span>
     <span></span>
   </div>
 
-  <!-- The Sidebar -->
-  <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
-    <a href="/">Home</a>
-    <a href="/slotenmaker-amsterdam-centrum.html">Amsterdam-Centrum</a>
-    <a href="/slotenmaker-amsterdam-noord.html">Amsterdam-Noord</a>
-    <a href="/slotenmaker-amsterdam-oost.html">Amsterdam-Oost</a>
-    <a href="/slotenmaker-amsterdam-west.html">Amsterdam-West</a>
-    <a href="/slotenmaker-amsterdam-zuid.html">Amsterdam-Zuid</a>
-    <a href="/slotenmaker-amsterdam-nieuw-west.html">Amsterdam-Nieuw-West</a>
-    <a href="/slotenmaker-amsterdam-zuid-oost.html">Amsterdam-Zuidoost</a>
-    <a href="/slotenmaker-amsterdam-westpoort.html">Amsterdam-Westpoort</a>
+  <!-- The Overlay (background) -->
+  <div id="myNav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+      <a href="/">Home</a>
+      <a href="/slotenmaker-amsterdam-centrum.html">Amsterdam-Centrum</a>
+      <a href="/slotenmaker-amsterdam-noord.html">Amsterdam-Noord</a>
+      <a href="/slotenmaker-amsterdam-oost.html">Amsterdam-Oost</a>
+      <a href="/slotenmaker-amsterdam-west.html">Amsterdam-West</a>
+      <a href="/slotenmaker-amsterdam-zuid.html">Amsterdam-Zuid</a>
+      <a href="/slotenmaker-amsterdam-nieuw-west.html">Amsterdam-Nieuw-West</a>
+      <a href="/slotenmaker-amsterdam-zuid-oost.html">Amsterdam-Zuidoost</a>
+      <a href="/slotenmaker-amsterdam-westpoort.html">Amsterdam-Westpoort</a>
+    </div>
+
   </div>
 
   <!-- H1 bovenaan -->
@@ -256,23 +311,23 @@
     <div class="section">
       <h3>Klantbeoordelingen</h3>
       <div class="review">
-        "Daar stond ik dan. Na een gezellig avondje uit kwam ik erachter dat ik mijn sleutels niet had. Gelukkig vond ik Slotenmaker Amsterdam. De medewerker stond snel op de stoep – echt een geweldige service!"  
+        "Daar stond ik dan. Na een gezellig avondje uit kwam ik erachter dat ik mijn sleutels niet had. Gelukkig vond ik Slotenmaker Amsterdam. De medewerker stond snel op de stoep – echt een geweldige service!"
         <strong>– Lena Fernandez</strong>
       </div>
       <div class="review">
-        "Heel blij met de snelle en accurate service! Ik kon weer naar binnen! En dat op zondagavond, superservice!!"  
+        "Heel blij met de snelle en accurate service! Ik kon weer naar binnen! En dat op zondagavond, superservice!!"
         <strong>– Rose-Marie van Wijk</strong>
       </div>
       <div class="review">
-        "Super snelle en vriendelijke service zelfs op zondagavond! Wanneer je voor een gesloten deur staat, zijn deze mannen je redding."  
+        "Super snelle en vriendelijke service zelfs op zondagavond! Wanneer je voor een gesloten deur staat, zijn deze mannen je redding."
         <strong>– Maaike uit Amsterdam-Oost</strong>
       </div>
       <div class="review">
-        "Goede snelle service. Professioneel en behulpzaam, correct en aardig tegelijk. Mocht ik weer een sleutelprobleem hebben, zou ik niet twijfelen en ze weer benaderen."  
+        "Goede snelle service. Professioneel en behulpzaam, correct en aardig tegelijk. Mocht ik weer een sleutelprobleem hebben, zou ik niet twijfelen en ze weer benaderen."
         <strong>– Katinka uit Amsterdam-West</strong>
       </div>
       <div class="review">
-        
+
       </div>
     </div>
 
@@ -280,23 +335,18 @@
       <p>© 2025 Spoed Slotenmaker Amsterdam. Alle rechten voorbehouden.</p>
       <p>Deze website gebruikt Google Analytics 4 en CookieYes voor cookiebeheer. Geen persoonsgegevens worden verzameld.</p>
     </footer>
-  </div>
 
-  <script>
-    // Function to open/close the sidebar
-    function toggleNav() {
-      const sidebar = document.getElementById("mySidebar");
-      if (sidebar.style.width === "250px") {
-        sidebar.style.width = "0";
-      } else {
-        sidebar.style.width = "250px";
-      }
-    }
+    <script>
+        // Function to open the overlay navigation
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
 
-    // Optional: Close sidebar if user clicks outside of it (on the backdrop)
-    // This requires a bit more complex logic involving an overlay element or checking the click target.
-    // For simplicity, the close button and hamburger icon handle opening/closing.
-  </script>
+        // Function to close the overlay navigation
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
 
 </body>
 </html>
