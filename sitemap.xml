@@ -4,55 +4,71 @@
   <url>
     <loc>https://slotenmakerspoedamsterdam.nl/</loc>
     <lastmod>2023-10-01</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Over ons / Diensten -->
+  <!-- Slotenmaker Amsterdam Centrum -->
   <url>
-    <loc>https://slotenmakerspoedamsterdam.nl/slotenmaker-amsterdam/</loc>
+    <loc>https://slotenmakerspoedamsterdam.nl/slotenmaker-amsterdam-centrum.html</loc>
     <lastmod>2023-10-01</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Werkgebied -->
+  <!-- Slotenmaker Amsterdam Noord -->
   <url>
-    <loc>https://slotenmakerspoedamsterdam.nl/werkgebied/</loc>
+    <loc>https://slotenmakerspoedamsterdam.nl/slotenmaker-amsterdam-noord.html</loc>
     <lastmod>2023-10-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 
-  <!-- Prijzen -->
+  <!-- Slotenmaker Amsterdam Oost -->
   <url>
-    <loc>https://slotenmakerspoedamsterdam.nl/prijzen/</loc>
+    <loc>https://slotenmakerspoedamsterdam.nl/slotenmaker-amsterdam-oost.html</loc>
     <lastmod>2023-10-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 
-  <!-- Klantbeoordelingen -->
+  <!-- Slotenmaker Amsterdam West -->
   <url>
-    <loc>https://slotenmakerspoedamsterdam.nl/klantbeoordelingen/</loc>
-    <lastmod>2023-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Contactpagina -->
-  <url>
-    <loc>https://slotenmakerspoedamsterdam.nl/contact/</loc>
+    <loc>https://slotenmakerspoedamsterdam.nl/slotenmaker-amsterdam-west.html</loc>
     <lastmod>2023-10-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
 
-  <!-- Blog of artikelen (indien aanwezig) -->
+  <!-- Slotenmaker Amsterdam Zuid -->
   <url>
-    <loc>https://slotenmakerspoedamsterdam.nl/blog/</loc>
+    <loc>https://slotenmakerspoedamsterdam.nl/slotenmaker-amsterdam-zuid.html</loc>
     <lastmod>2023-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Slotenmaker Amsterdam Nieuw-West -->
+  <url>
+    <loc>https://slotenmakerspoedamsterdam.nl/slotenmaker-amsterdam-nieuw-west.html</loc>
+    <lastmod>2023-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Slotenmaker Amsterdam Zuidoost -->
+  <url>
+    <loc>https://slotenmakerspoedamsterdam.nl/slotenmaker-amsterdam-zuid-oost.html</loc>
+    <lastmod>2023-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Slotenmaker Amsterdam Westpoort -->
+  <url>
+    <loc>https://slotenmakerspoedamsterdam.nl/slotenmaker-amsterdam-westpoort.html</loc>
+    <lastmod>2023-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
