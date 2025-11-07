@@ -3,12 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Spoed Slotenmaker Amsterdam – Binnen 30 Min | 24/7 | €99,95</title>
-  <meta name="description" content="Op slot in Amsterdam? Dé spoed slotenmaker. Binnen 30 minuten ter plaatse, 24/7. Duidelijke vaste prijs: vanaf €99,95 overdag, €175 na. Bel direct!" />
+  <title>Slotenmaker Spoed Amsterdam – 24/7 Hulp | €99,95</title>
+  <meta name="description" content="Op slot in Amsterdam? Wij staan binnen 30 minuten bij je! 24/7 spoed-slotenmaker met vaste prijs vanaf €99,95. Geen voorrijkosten. Bel nu: 06 16015305!">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- CookieYes badge -->
-  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/1234567890abcedf12345678/cookieyes.js"></script>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["EmergencyService", "Locksmith"],
+    "name": "Spoed Slotenmaker Amsterdam",
+    "description": "24/7 spoedhulp voor sloten in Amsterdam. Binnen 30 minuten ter plaatse.",
+    "url": "https://slotenmakerspoedamsterdam.nl",
+    "telephone": "+31616015305",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Prins Hendrikkade 21-E",
+      "postalCode": "1012 TL",
+      "addressLocality": "Amsterdam",
+      "addressRegion": "Noord-Holland",
+      "addressCountry": "NL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.3702,
+      "longitude": 4.8952
+    },
+    "areaServed": "Amsterdam",
+    "availableService": [
+      "Slot vervangen",
+      "Deur openmaken",
+      "Sleutel verloren",
+      "Slot reparatie"
+    ],
+    "openingHours": "24/7",
+    "priceRange": "€99 - €175"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hoe snel zijn jullie ter plaatse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Binnen 30 minuten in Amsterdam-centrum, meestal sneller."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Moet ik vooraf betalen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nee, je betaalt pas na afloop, contant of pinnen."
+        }
+      }
+    ]
+  }
+  </script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBMVZLF0KR"></script>
@@ -27,9 +83,7 @@
       --text: #333333;
       --gray: #f9f9f9;
     }
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       font-family: 'Open Sans', sans-serif;
       margin: 0;
@@ -41,16 +95,6 @@
     h1, h2, h3 {
       font-family: 'Montserrat', sans-serif;
       color: var(--primary);
-    }
-    .header {
-      background: var(--primary);
-      color: var(--light);
-      text-align: center;
-      padding: 15px;
-    }
-    .header h1 {
-      margin: 0;
-      font-size: 24px;
     }
     .phone-bar {
       background: var(--accent);
@@ -68,10 +112,6 @@
       text-align: center;
       padding: 40px 20px;
     }
-    .hero h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
     .btn {
       background: var(--accent);
       color: var(--light);
@@ -82,31 +122,20 @@
       font-weight: bold;
       display: inline-block;
       margin: 20px 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 8px rgba(0,0,0,0.15);
     }
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 20px;
     }
-    .section {
-      margin: 40px 0;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-    table td, table th {
-      padding: 12px;
-      border: 1px solid #ddd;
-      text-align: left;
-    }
+    .section { margin: 40px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    table td, table th { padding: 12px; border: 1px solid #ddd; text-align: left; }
     .review {
       background: var(--gray);
       padding: 15px;
@@ -121,233 +150,21 @@
       background: #f0f0f0;
       margin-top: 40px;
     }
-    .small {
-      font-size: 12px;
-      color: #666;
-      font-style: italic;
-    }
-    .faq-section {
-        margin-top: 20px;
-    }
-    .faq-section summary {
-        cursor: pointer;
-        padding: 10px;
-        background-color: #e9e9e9;
-        border: 1px solid #ccc;
-        margin-bottom: 5px;
-        list-style: none; /* Removes default arrow in some browsers */
-    }
-    .faq-section summary::-webkit-details-marker {
-        display: none; /* Hides default arrow in Chrome/Safari */
-    }
-    .faq-section summary::before {
-        content: "► "; /* Adds custom arrow */
-    }
-    .faq-section details[open] summary::before {
-        content: "▼ "; /* Changes arrow when open */
-    }
-    .faq-section details {
-        margin-bottom: 10px;
-        border: 1px solid #eee;
-    }
-    .faq-section details p {
-        padding: 10px;
-        background-color: #f9f9f9;
-        margin: 0;
-    }
-    @media (max-width: 600px) {
-      .hero h2 { font-size: 24px; }
-      .btn { font-size: 16px; padding: 12px 24px; }
-      .phone-bar { font-size: 18px; padding: 10px; }
-    }
-
-    /* --- Nieuwe/Nagestreepte Navigatiestijlen --- */
-
-    /* 1. Standaard Desktop Navigatiebalk */
-    .desktop-nav {
-        background-color: var(--primary); /* Dezelfde achtergrondkleur als de header */
-        padding: 10px 0; /* Klein beetje padding boven en onder */
-        text-align: center; /* Links horizontaal centreren */
-        /* Verberg op mobiel, toon op desktop */
-        display: none;
-    }
-    .desktop-nav ul {
-        list-style: none; /* Geen bolletjes */
-        margin: 0; /* Geen standaard marges */
-        padding: 0; /* Geen standaard padding */
-        display: flex; /* Links horizontaal weergeven */
-        justify-content: center; /* Links horizontaal centreren binnen de balk */
-        flex-wrap: wrap; /* Laat links naar de volgende regel gaan als ze niet passen */
-    }
-    .desktop-nav li {
-        margin: 5px 10px; /* Kleine marge rond elke link voor ademruimte */
-    }
-    .desktop-nav a {
-        color: var(--light); /* Witte tekst */
-        text-decoration: none; /* Geen onderstreping */
-        font-size: 16px; /* Leesbare tekstgrootte */
-        padding: 8px 12px; /* Padding rond de link voor een groter klikgebied */
-        border-radius: 4px; /* Kleine afronding voor de links */
-        transition: background-color 0.2s ease; /* Vloeiende hover overgang */
-    }
-    .desktop-nav a:hover {
-        background-color: rgba(255, 255, 255, 0.1); /* Licht doorschijnende witte achtergrond bij hover */
-    }
-
-    /* 2. Hamburger Menu Container */
-    .hamburger-icon {
-      display: none; /* Standaard verborgen op grote schermen */
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 21px; /* 3 bars * 3px height + 2 * 4px margins */
-      cursor: pointer;
-      position: fixed; /* Blijft op zijn plaats bij scrollen */
-      top: 15px; /* Afstand vanaf de bovenkant */
-      left: 15px; /* Afstand vanaf de linkerkant */
-      z-index: 1001; /* Bovenop andere elementen */
-    }
-
-    /* 3. Stijl voor de hamburger strepen (nu zwart) */
-    .hamburger-icon span {
-      display: block;
-      width: 100%;
-      height: 3px;
-      background-color: #000000; /* Zwarte kleur voor de strepen */
-      border-radius: 2px;
-      transition: all 0.3s ease-in-out;
-    }
-
-    /* 4. De overlay (achtergrond) voor het mobiele menu */
-    .overlay {
-      height: 100%;
-      width: 0; /* Initieel verborgen */
-      position: fixed;
-      z-index: 1000; /* Onder de hamburger maar boven de rest */
-      left: 0;
-      top: 0;
-      background-color: rgba(0,0,0, 0.9); /* Zwarte achtergrond met transparantie */
-      overflow-x: hidden; /* Geen horizontale scroll */
-      transition: 0.5s; /* Soepele overgang */
-    }
-
-    /* 5. Inhoud van de overlay */
-    .overlay-content {
-      position: relative;
-      top: 25%; /* 25% vanaf de bovenkant */
-      width: 100%;
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    /* 6. Links binnen de overlay */
-    .overlay a {
-      padding: 12px;
-      text-decoration: none;
-      font-size: 24px;
-      color: #818181; /* Grijsachtige kleur */
-      display: block;
-      transition: 0.3s;
-    }
-
-    /* 7. Hover effect voor links in de overlay */
-    .overlay a:hover, .overlay a:focus {
-      color: #f1f1f1; /* Lichtere kleur bij hover/focus */
-    }
-
-    /* 8. Sluitknop (X) binnen de overlay */
-    .overlay .closebtn {
-      position: absolute;
-      top: 20px;
-      right: 45px;
-      font-size: 60px;
-    }
-
-    /* 9. Media Query voor mobiele schermen */
-    @media screen and (max-width: 768px) {
-      /* Toon het hamburger icoon op kleine schermen */
-      .hamburger-icon {
-        display: flex;
-      }
-
-      /* Pas de grootte van de links in de overlay aan voor kleine schermen */
-      .overlay a {font-size: 20px}
-      .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-      }
-
-      /* Verberg de desktop navigatie op mobiel */
-      .desktop-nav {
-          display: none !important; /* Zorg dat het echt verborgen is */
-      }
-    }
-
-    /* 10. Media Query voor desktop schermen */
-    @media screen and (min-width: 769px) {
-        /* Toon de desktop navigatie op grote schermen */
-        .desktop-nav {
-            display: block; /* Maak het zichtbaar als een blok */
-        }
-        /* Verberg het hamburger icoon op grote schermen */
-        .hamburger-icon {
-             display: none !important; /* Zorg dat het echt verborgen is */
-        }
-    }
-
+    .small { font-size: 12px; color: #666; font-style: italic; }
   </style>
 </head>
 <body>
 
-  <!-- 1. Hamburger Icoon (alleen zichtbaar op mobiel) -->
-  <div class="hamburger-icon" onclick="openNav()" aria-label="Open navigatiemenu">
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="phone-bar">
+    <a href="tel:+31616015305" style="color:white; text-decoration:none;">📞 06 16015305</a>
   </div>
 
-  <!-- 2. Overlay voor het mobiele menu -->
-  <div id="myNav" class="overlay">
-    <!-- Sluitknop -->
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Sluit navigatiemenu">&times;</a>
-    <!-- Menu inhoud -->
-    <div class="overlay-content">
-      <a href="/">Home</a>
-      <a href="/slotenmaker-amsterdam-centrum.html">Amsterdam-Centrum</a>
-      <a href="/slotenmaker-amsterdam-noord.html">Amsterdam-Noord</a>
-      <a href="/slotenmaker-amsterdam-oost.html">Amsterdam-Oost</a>
-      <a href="/slotenmaker-amsterdam-west.html">Amsterdam-West</a>
-      <a href="/slotenmaker-amsterdam-zuid.html">Amsterdam-Zuid</a>
-      <a href="/slotenmaker-amsterdam-nieuw-west.html">Amsterdam-Nieuw-West</a>
-      <a href="/slotenmaker-amsterdam-zuid-oost.html">Amsterdam-Zuidoost</a>
-      <a href="/slotenmaker-amsterdam-westpoort.html">Amsterdam-Westpoort</a>
-    </div>
-  </div>
-
-  <!-- 3. Standaard Desktop Navigatie (alleen zichtbaar op desktop) -->
-  <nav class="desktop-nav">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/slotenmaker-amsterdam-centrum.html">Amsterdam-Centrum</a></li>
-      <li><a href="/slotenmaker-amsterdam-noord.html">Amsterdam-Noord</a></li>
-      <li><a href="/slotenmaker-amsterdam-oost.html">Amsterdam-Oost</a></li>
-      <li><a href="/slotenmaker-amsterdam-west.html">Amsterdam-West</a></li>
-      <li><a href="/slotenmaker-amsterdam-zuid.html">Amsterdam-Zuid</a></li>
-      <li><a href="/slotenmaker-amsterdam-nieuw-west.html">Amsterdam-Nieuw-West</a></li>
-      <li><a href="/slotenmaker-amsterdam-zuid-oost.html">Amsterdam-Zuidoost</a></li>
-      <li><a href="/slotenmaker-amsterdam-westpoort.html">Amsterdam-Westpoort</a></li>
-    </ul>
-  </nav>
-
-
-  <!-- H1 bovenaan -->
   <h1 style="text-align: center; margin: 20px 0; font-size: 28px;">Spoed Slotenmaker Amsterdam – Binnen 30 Minuten</h1>
 
-  <!-- Adres -->
-  <p style="text-align: center; color: #666; font-size: 14px;">Adres: Prins Hendrikkade 21-E, 1012 TL Amsterdam</p>
+  <p style="text-align: center; color: #666; font-size: 14px;">
+    Adres: <a href="https://maps.google.com/?q=Prins+Hendrikkade+21-E,+1012+TL+Amsterdam" target="_blank" style="color:#666;">Prins Hendrikkade 21-E, 1012 TL Amsterdam</a>
+  </p>
 
-  <!-- Prijzen bovenaan -->
   <div style="text-align: center; margin: 30px 0; padding: 15px; background: var(--gray); border-radius: 8px;">
     <p><strong>💰 Directe Prijs:</strong></p>
     <p>Dagtarief: <strong>vanaf €99,95</strong><br>
@@ -355,13 +172,8 @@
     <em>Geen voorrijkosten • Betaling ter plekke</em></p>
   </div>
 
-  <div class="header">
-    <h2>Spoed Hulp 24/7 – Binnen 30 minuten bij u</h2>
-  </div>
-  <p class="phone-bar">📞 06 16015305</p>
-
   <div class="hero">
-    <a href="tel:0616015305" class="btn">Bel Nu – Direct Hulp</a>
+    <a href="tel:+31616015305" class="btn">Bel Nu – Direct Hulp</a>
   </div>
 
   <div class="container">
@@ -392,29 +204,25 @@
         "Goede snelle service. Professioneel en behulpzaam, correct en aardig tegelijk. Mocht ik weer een sleutelprobleem hebben, zou ik niet twijfelen en ze weer benaderen."
         <strong>– Katinka uit Amsterdam-West</strong>
       </div>
-      <div class="review">
+    </div>
 
-      </div>
+    <div class="section">
+      <h3>Veelgestelde Vragen</h3>
+      <details>
+        <summary><strong>Hoe snel zijn jullie ter plaatse?</strong></summary>
+        <p>Binnen 30 minuten in Amsterdam-centrum, meestal sneller.</p>
+      </details>
+      <details>
+        <summary><strong>Moet ik vooraf betalen?</strong></summary>
+        <p>Nee, je betaalt pas na afloop, contant of pinnen.</p>
+      </details>
     </div>
 
     <footer>
       <p>© 2025 Spoed Slotenmaker Amsterdam. Alle rechten voorbehouden.</p>
-      <p>Deze website gebruikt Google Analytics 4 en CookieYes voor cookiebeheer. Geen persoonsgegevens worden verzameld.</p>
+      <p>Deze website gebruikt Google Analytics 4. Geen persoonsgegevens worden zonder toestemming verzameld.</p>
     </footer>
   </div>
-
-  <!-- JavaScript voor het Hamburger Menu -->
-  <script>
-    // Functie om de overlay te openen
-    function openNav() {
-      document.getElementById("myNav").style.width = "100%";
-    }
-
-    // Functie om de overlay te sluiten
-    function closeNav() {
-      document.getElementById("myNav").style.width = "0%";
-    }
-  </script>
 
 </body>
 </html>
