@@ -1,21 +1,12 @@
 # Robots.txt voor Slotenmaker Amsterdam
 User-agent: *
 
-# Toegestane pagina's
-Allow: /
-Allow: /slotenmaker-amsterdam/
-Allow: /werkgebied/
-Allow: /prijzen/
-Allow: /klantbeoordelingen/
-Allow: /contact/
-Allow: /blog/
-
-# Geblokkeerde pagina's
+# Blokkeer onnodige mappen en bestanden
 Disallow: /admin/
 Disallow: /wp-admin/
 Disallow: /cgi-bin/
-Disallow: /*?* # Blokkeer URL's met queryparameters
-Disallow: /*.php$ # Blokkeer PHP-bestanden
+Disallow: /*?*
+Disallow: /*.php$
 
-# Sitemap locatie
+# Sitemap
 Sitemap: https://slotenmakerspoedamsterdam.nl/sitemap.xml
